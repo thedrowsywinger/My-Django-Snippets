@@ -26,6 +26,6 @@ http://127.0.0.1:8000/accounts/Sign-Up/
 
 ## Sign Up
 
-![signup page](./images_for_readme/sign_up.png)
+![signup page](./images_for_readme/sign_up_ss.png)
 
 
