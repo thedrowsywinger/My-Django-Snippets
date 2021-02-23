@@ -5,13 +5,17 @@ from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
 from custom_authentication.views import (
-    SignUpView
+    SignUpView,
+    LoginView,
+    LogoutView
 )
 
 app_name = "custom_authentication"
 
 urlpatterns = [
     path('Sign-Up/', SignUpView, name='usersignup'),
+    path('Log-In/', LoginView, name='userlogin'),
+    path('Log-Out/', LogoutView, name='userslogout'),
 ]
 
 if settings.DEBUG:

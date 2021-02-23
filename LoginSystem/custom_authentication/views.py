@@ -33,7 +33,7 @@ def SignUpView(request):
 		if signup_form.is_valid():
 			print("Everything is valid")
 			signup_form.save()
-			current_user = User.objects.get(email=request.POST['business_email'])
+			current_user = User.objects.get(email=request.POST['email'])
 			# current_user.is_active = False
 			# current_user.save()
             
@@ -50,3 +50,34 @@ def SignUpView(request):
 			return redirect('landing:home')
 
 	return render(request, 'accounts/sign-up.html') 
+
+
+def LoginView(request):
+
+	print("In the login view")
+
+	if "login" in request.POST:
+
+		email = request.POST.get('email')
+		password = request.POST.get('password')
+
+		current_user = User.objects.get(email=request.POST['email'])
+		current_user_username = current_user.username
+
+		user = authenticate(request, email=email, password=password)
+
+		if user is not None:
+			login(request, user)
+			print("Login Successful")
+			# return redirect('user_profiles:profile')
+		else:
+			print("No user found")
+
+			return redirect('landing:home')
+
+	return render(request, 'accounts/log-in.html')
+
+def LogoutView(request):
+
+	logout(request)
+	return	redirect('accounts:userlogin')

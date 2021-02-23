@@ -25,3 +25,4 @@ class CustomUserForm(forms.ModelForm):
     class Meta:
       model = CustomProfileModel
       fields = ['first_name', 'last_name', 'email', 'contact_number']
+
