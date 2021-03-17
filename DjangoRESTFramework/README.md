@@ -45,8 +45,12 @@ python manage.py run server
 
 Then in the postman window, we can use the following link: http://127.0.0.1:8000/ 
 
-N.B: IT must be a POST request  
+N.B: IT must be a POST request 
+
+![post request in postman](./images/post_request.png)
 
 You can also make a GET request with the same link  
+
+![get request in postman](./images/get_request.png)
 
  
