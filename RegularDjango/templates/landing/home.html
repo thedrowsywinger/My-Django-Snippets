@@ -1,1 +1,53 @@
-Welcome Home
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+        <title>Home</title>       
+    </head>
+    <body>
+        <div class="home-div">
+            <!-- <div class="logo"></div> -->
+            <div class="title">Welcome to My Django Snippets</div>
+            <div class="sub-title">thedrowsywinger</div>
+            <br>
+            <div class="landing-page-buttons">
+                <div class="div1">
+                    <a href="{% url 'custom_authentication:userlogin' %}">
+                        <button class="button1">
+                            Login
+                        </button>
+                    </a>
+                </div>
+                <div class="div2">
+                    <a href="{% url 'custom_authentication:usersignup' %}">
+                        <button class="button2">
+                            Sign-Up
+                        </button>
+                    </a>
+                </div>
+                <div class="div3">
+                        <button class="button3">
+                            Blog
+                        </button>
+                </div>
+            </div>
+            <!-- <img src="https://i.imgur.com/2BnLPMD.png" alt="landing-wave"> -->
+            <div class="Contact-Me">Let's Get in Touch!</div>
+            <div class="fields">
+                <div class="username">
+                    <input type="username" class="user-input" placeholder="Enter Your Name">
+                </div>
+                <div class="email">
+                    <input type="email" class="email-input" placeholder="Enter Your Email">
+                </div>
+                <div class="description">
+                    <input type="description" class="text-input" placeholder="Enter a short message">
+                </div>
+                <button class="submit-button" type="submit">Submit</button>
+            </div>
+        </div>
+    </body>
+</html>

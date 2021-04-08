@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-from RegularDjango import secrets
+from RegularDjango import secrets, utils
 # from custom_authentication.models import EmailBackend
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -50,13 +50,32 @@ INSTALLED_APPS = [
     'landing.apps.LandingConfig',
     'user_profiles.apps.UserProfilesConfig',
     'form_app.apps.FormAppConfig',
+    'blog.apps.BlogConfig',
 
     # Third Party Apps
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
 
+    # Ckeditor configuration, for the blog
+    'ckeditor',
+    'ckeditor_uploader'
 ]
+
+
+################## CKEDITOR CONFIGURATION ##################
+
+CKEDITOR_UPLOAD_PATH = "ck_editor/blog/"
+
+CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
+
+# CKEDITOR_CONFIGS = {
+#     'awesome_ckeditor': {
+#         'toolbar': 'Basic',
+#     },
+# }
+
+#############################################################
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -172,6 +191,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

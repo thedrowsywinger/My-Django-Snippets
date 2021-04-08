@@ -1,0 +1,40 @@
+{% load static %}
+<!-- Header -->
+<header id="header" class="ex-header cover-overlay" style="background-image: url({{blog.header_image.url}}); ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>{{blog.title | safe}}</h1>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+    <h6 class="text-white">Written by {{blog.author}}</h6>
+</header> <!-- end of ex-header -->
+<!-- end of header -->
+
+<div class="ex-basic-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumbs">
+                    <a href="#">Resources</a><i class="fa fa-angle-double-right"></i><span>{{blog.title | safe}} by {{blog.author}}</span>
+                </div> <!-- end of breadcrumbs -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div>
+
+<!-- Blog Content -->
+<div class="ex-basic-2">
+    <div class="container blog-display">
+
+        {{blog.body | safe}}
+
+        <br>
+        <a class="btn-outline-reg" href="#">BACK</a>
+    </div> <!-- end of container -->
+</div> <!-- end of ex-basic-2 -->
+<!-- end of Blogs content -->
+
+<br>
+

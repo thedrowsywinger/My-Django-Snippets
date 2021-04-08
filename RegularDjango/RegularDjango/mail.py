@@ -2,7 +2,6 @@ from RegularDjango import secrets
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from jinja2 import Environment
 
 # sender_email = secrets.EMAIL_HOST_USER
 # receiver_email = "abdullah.sarwar@northsouth.edu"
@@ -533,4 +532,4 @@ def send_email():
         server.sendmail(
             sender_email, receiver_email, message.as_string()
         )
-print("Email sent")
+    print("Email sent")

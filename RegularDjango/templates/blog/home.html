@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+    <head>
+        <title>Blogs</title>
+    </head>
+    <body>
+        {% for i in blogs %}
+            
+                <div class="col-sm-6 col-md-3">
+                    <div class="card shadow rounded">
+                        <img src="{{i.header_image.url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <div class="d-flex my-2 justify-content-between">
+                                <h5 class="card-title">{{i.title}}</h5>
+                            </div>
+                            <p class="card-text"><small class="text-muted">Uploaded at {{i.issue_date}}</small></p>
+                            <div class="btn-group btn-block" role="group" aria-label="Basic example">
+                                <a href="{% url 'blog:view_blog' pk=i.pk %}"><button type="button" class="btn btn-outline-primary">View</button></a>
+                                <a href="{% url 'blog:blog_editor' pk=i.pk %}"><button type="button" class="btn btn-early">Update</button></a>
+                                <a href="{% url 'blog:blog_delete' pk=i.pk %}"><button type="button" class="btn btn-outline-danger">Remove</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        {% endfor %}
+    </body>
+</html>

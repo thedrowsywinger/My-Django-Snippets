@@ -1,0 +1,44 @@
+{% load static %}
+
+<!-- Main content -->
+<div class="content pb-3">
+    <div class="contianer-fluid">
+        <div class="container text-left mb-4">
+            <a href="#">
+                <button class="btn btn-early">
+                    <i class="fas fa-arrow-alt-circle-left"></i> &nbsp; Back
+                </button>
+            </a>
+        </div>
+
+        <div class="container">
+            <form action="" method="POST" enctype="multipart/form-data">
+            
+                {% csrf_token %}
+                <div class="form-row px-1 mx-auto">
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            {{form.media}}
+                            {{form.as_p}}
+                        </div>
+                    </div>
+                
+                    
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <div class="text-right" id="save">
+                                <button class="btn btn-early" type="submit" name="blog_edit">Edit Post</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            
+            </form>
+        </div>
+
+
+
+    </div>
+</div>

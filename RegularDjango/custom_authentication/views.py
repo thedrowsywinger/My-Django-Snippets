@@ -69,6 +69,7 @@ def LoginView(request):
 		if user is not None:
 			login(request, user)
 			print("Login Successful")
+			return HttpResponse("You are now logged in")
 			# return redirect('user_profiles:profile')
 		else:
 			print("No user found")
