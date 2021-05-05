@@ -56,12 +56,18 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
 
     # Ckeditor configuration, for the blog
     'ckeditor',
     'ckeditor_uploader'
 ]
 
+################## CRISPY FORM SETTING ##################
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
+
+################## CRISPY FORM SETTING ##################
 
 ################## CKEDITOR CONFIGURATION ##################
 

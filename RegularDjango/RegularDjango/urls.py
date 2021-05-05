@@ -31,6 +31,8 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('ckeditor/upload/', login_required(ckeditor_views.upload), name='ckeditor_upload'),
     path('ckeditor/browse/', never_cache(login_required(ckeditor_views.browse)), name='ckeditor_browse'),
+    
+    # path('accounts/', include('django.contrib.auth.urls')),
     # path('form/', include('form_app.urls')),
 ]
 
@@ -39,3 +41,4 @@ urlpatterns += staticfiles_urlpatterns()
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    
